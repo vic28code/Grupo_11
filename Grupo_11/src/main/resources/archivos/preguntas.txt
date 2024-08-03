@@ -14,7 +14,7 @@
 ¿Puede este animal cambiar de color?
 ¿Vive este animal en árboles?
 ¿Es este animal ovíparo?
-¿Es este animal peligroso para los humanos?
+¿Es este animal salvaje?
 ¿Tiene este animal una cola larga?
 ¿Es este animal conocido por su velocidad?
 ¿Tiene este animal una trompa?

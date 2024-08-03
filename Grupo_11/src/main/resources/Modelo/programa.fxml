@@ -12,34 +12,36 @@
    <children>
       <VBox alignment="CENTER" prefHeight="56.0" prefWidth="730.0">
          <children>
-            <Label text="BIENVENIDO" />
+            <Label text="TELEPATHIC TACTICS" />
          </children>
       </VBox>
       <VBox prefHeight="394.0" prefWidth="730.0">
          <children>
-            <HBox prefHeight="414.0" prefWidth="730.0">
+            <HBox prefHeight="406.0" prefWidth="730.0">
                <children>
                   <VBox prefHeight="164.0" prefWidth="210.0">
                      <children>
-                        <ImageView fitHeight="393.0" fitWidth="198.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="411.0" fitWidth="214.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../imagenes/karen.png" />
                            </image>
                         </ImageView>
                      </children>
                   </VBox>
-                  <VBox alignment="CENTER" prefHeight="422.0" prefWidth="508.0">
+                  <VBox alignment="CENTER" prefHeight="396.0" prefWidth="508.0">
                      <children>
-                        <Label text="JUEGO DE LAS 20 PREGUNTAS" />
-                        <Label prefHeight="138.0" prefWidth="383.0" text="Hola, soy Karen. En este juego pondrás a prueba mis conocimientos.Tendrás que pensar en un animal y me encargaré de adivinarlo a través de las preguntas que te haré." textAlignment="CENTER" wrapText="true" />
+                        <Label text="Hola" />
+                        <Label prefHeight="115.0" prefWidth="383.0" text="Soy Karen. En este juego pondrás a prueba mis conocimientos.Tendrás que pensar en un animal y me encargaré de adivinarlo a través de ciertas preguntas que te haré." textAlignment="CENTER" wrapText="true" />
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <HBox alignment="CENTER" prefHeight="231.0" prefWidth="508.0" spacing="25.0">
+                              <HBox alignment="CENTER" prefHeight="216.0" prefWidth="507.0" spacing="25.0">
                                  <children>
                                     <Label text="Reglas del juego:" />
-                                    <VBox alignment="CENTER_LEFT" prefHeight="170.0" prefWidth="362.0">
+                                    <VBox alignment="CENTER_LEFT" prefHeight="195.0" prefWidth="345.0">
                                        <children>
-                                          <Label text="* Karen solo podrá realizar 20 preguntas." textAlignment="JUSTIFY" />
+                                          <Label text="* Indica cuántas preguntas puede realizar Karen. " textAlignment="JUSTIFY" />
+                                          <Label text="* El máximo de preguntas es 20." textAlignment="JUSTIFY" wrapText="true" />
+                                          <Label text="* Si haces muy pocas preguntas, Karen te dará múltiples respuestas." textAlignment="JUSTIFY" wrapText="true" />
                                           <Label text="* Solo es válido responder con sí o no, caso contrario no se podrá avanzar a la siguiente pregunta." textAlignment="JUSTIFY" wrapText="true" />
                                           <Label text="* Solo debes pensar en un animal dentro de la lista de animales que Karen conozca, caso contrario Karen no podrá adivinar." wrapText="true" />
                                           <Label text="* No puedes cambiar de animal durante el juego, o bien alteraría el resultado o no será adivinado." textAlignment="JUSTIFY" wrapText="true" />
@@ -52,7 +54,7 @@
                               </HBox>
                            </children>
                         </VBox>
-                        <VBox alignment="BOTTOM_CENTER" prefHeight="41.0" prefWidth="508.0">
+                        <VBox alignment="BOTTOM_CENTER" prefHeight="50.0" prefWidth="508.0">
                            <children>
                               <Label text="¡Empecemos!" />
                            </children>
