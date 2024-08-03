@@ -3,10 +3,10 @@ package Modelo;
 import java.io.IOException;
 import javafx.fxml.FXML;
 
-public class PrimaryController {
+public class Programa {
 
     @FXML
-    private void switchToSecondary() throws IOException {
+    private void play() throws IOException {
         App.setRoot("secondary");
     }
 }
