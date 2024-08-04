@@ -102,7 +102,7 @@ public class ArbolBinario {
     }
     
     public void imprimirArbol(){
-        listaNodos.forEach((x,y)->System.out.println("ind "+x+"-nodo"+y));
+        listaNodos.forEach((x,y)->System.out.println("ind: "+x+" - nodo: "+y));
     }
     
 }

@@ -17,9 +17,9 @@ import java.util.Map;
  */
 public class Persistencia {
     
-    private final String RUTA_ARCHIVOS = "src/main/java/Estructura/";
+    private static final String RUTA_ARCHIVOS = "src/main/java/Estructura/";
     
-    public void cargarDatos(ArbolBinario arbol){
+    public static void cargarDatos(ArbolBinario arbol){
         
         try (BufferedReader br = new BufferedReader(new FileReader(RUTA_ARCHIVOS+"Info.txt"))) {
             String linea;
@@ -36,7 +36,6 @@ public class Persistencia {
                 //Indices impar -> Opcion Si
                 else if(ind%2!=0){
                     indNodoAnterior = (ind-1)/2;
-                    System.out.println(indNodoAnterior);
                     arbol.getListaNodos().get(indNodoAnterior).addNodoSi(nuevoNodo);
                 }
                 //Indices par -> Opcion No
@@ -52,7 +51,7 @@ public class Persistencia {
         
     }
     
-    public void guardarDatos(ArbolBinario arbol){
+    public static void guardarDatos(ArbolBinario arbol){
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(RUTA_ARCHIVOS+"Info.txt"))) {
             String linea;
             for (Map.Entry<Integer,Nodo> elemento : arbol.getListaNodos().entrySet()) {
