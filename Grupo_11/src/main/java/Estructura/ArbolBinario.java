@@ -61,7 +61,7 @@ public class ArbolBinario {
     private Integer getKey(Nodo valor){
         if(valor == null) {return null;}
         for (Map.Entry<Integer,Nodo> elemento : listaNodos.entrySet()) {
-            if (elemento.getValue().contenido.equals(valor.contenido)) {
+            if (elemento.getValue().equals(valor)) {
                 return elemento.getKey();
             }
         }
