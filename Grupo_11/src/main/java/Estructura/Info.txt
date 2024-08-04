@@ -1,0 +1,5 @@
+1,Es un mamifero?
+2,Tiburon
+3,Tiene una cola larga?
+6,oso
+7,Mono
