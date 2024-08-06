@@ -20,6 +20,15 @@ public class ArbolBinario {
         clear();
     }
     
+    public void clear(){
+        this.raiz = null;
+        this.listaNodos = new HashMap<>();
+    }
+    
+    public boolean isEmpty(){
+        return raiz==null;
+    }
+    
     public Nodo getRaiz(){
         return raiz;
     }
@@ -30,15 +39,6 @@ public class ArbolBinario {
     
     public Map<Integer,Nodo> getListaNodos(){
         return listaNodos;
-    }
-    
-    public void clear(){
-        this.raiz = null;
-        this.listaNodos = new HashMap<>();
-    }
-    
-    public boolean isEmpty(){
-        return raiz==null;
     }
 
     // Retorna una lista con todos las hojas(Animales) a partir de un nodo dado
@@ -68,37 +68,42 @@ public class ArbolBinario {
         return null;
     }
     
-    public void addPregunta(String pregunta, Nodo nodoActual, int opcion ) {
-        Nodo NodoAnterior = nodoActual; //Temporal de la hoja anteriormente un Animal
-        nodoActual = new Nodo(pregunta);
+    //Añade una pregunta al arbol desplazando al nodoActual(Animal) a uno
+    //de los nodo Si o No dependiendo la ultima respuesta del usuario
+    public Nodo addPregunta(String pregunta, Nodo nodoActual, int opcion ) {
         int indNodoActual = getKey(nodoActual);
+        Nodo nodoPregunta = new Nodo(pregunta+"?");
         int indNodoNuevo;
         
         if(opcion ==1){
-            nodoActual.addNodoNo(NodoAnterior);
+            nodoPregunta.addNodoNo(nodoActual);
             indNodoNuevo = (indNodoActual*2);
         }else{
-             nodoActual.addNodoSi(NodoAnterior);
+             nodoPregunta.addNodoSi(nodoActual);
             indNodoNuevo = (indNodoActual*2)+1;
         }
         
-        listaNodos.put(indNodoActual, nodoActual);
-        listaNodos.put(indNodoNuevo, NodoAnterior);
+        listaNodos.put(indNodoActual, nodoPregunta);
+        listaNodos.put(indNodoNuevo, nodoActual);
+        return nodoPregunta;
     }
     
-    public void addAnimal(String animal, Nodo nodoPregunta, int opcion ) {
+    //Añade un animal al en uno de los nodos Si o No de un nodo pregunta
+    //En este caso no desplaza a ningun otro nodo, toma lugar donde habia un null
+    public Nodo addAnimal(String animal, Nodo nodoPregunta, int opcion ) {
         int indNodoPregunta = getKey(nodoPregunta), indNodoAnimal;
         Nodo nodoAnimal = new Nodo(animal);
 
         if(opcion ==1){
             nodoPregunta.addNodoSi(nodoAnimal);
-            indNodoAnimal = (indNodoPregunta*2);
+            indNodoAnimal = (indNodoPregunta*2)+1;
         }else{
             nodoPregunta.addNodoNo(nodoAnimal);
-            indNodoAnimal = (indNodoPregunta*2)+1;
+            indNodoAnimal = (indNodoPregunta*2);
         }
         
         listaNodos.put(indNodoAnimal, nodoAnimal);
+        return nodoAnimal;
     }
     
     public void imprimirArbol(){

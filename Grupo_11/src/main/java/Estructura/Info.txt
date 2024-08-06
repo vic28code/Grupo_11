@@ -1,5 +1,8 @@
 1,Es un mamifero?
-2,Tiburon
+2,salta mucho?
 3,Tiene una cola larga?
-6,oso
-7,Mono
+4,Tiburon
+5,Come moscas?
+6,Oso
+10,Grillo
+11,Sapo
