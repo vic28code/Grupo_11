@@ -1,20 +1,21 @@
-Oso sí sí sí no no no no no sí no no no no no no no sí no no no
-Lechuza no sí no no sí no no no no sí no no no no sí sí no no no no
-Venado sí no sí no no no no sí sí no no no no no no no no sí no no
-Paloma no no no no sí sí no no no no no no no no sí sí no no no no
-Tiburón no sí no sí no no sí no no no no no no no no no sí no sí no
-Elefante sí no sí no no no no sí sí no no no no no no no no sí no sí
-Cocodrilo no sí sí sí no no sí no no no no sí no no no sí sí sí no no
-Gato sí sí sí no no sí no no sí sí no no no no no sí no sí no no
-Canguro sí no sí no no no no sí sí no no no no no no no no sí sí no
-Serpiente no sí no no no no sí no no no no sí no no no sí sí no sí no
-Águila no sí no no sí no no no no no no no no no sí sí no no sí no
-Caballo sí no sí no no sí no sí sí no no no no no no no no sí sí no
-Cebra sí no sí no no no no sí sí no no no no no no no no sí sí no
-Mono sí no sí no no no no sí sí no no no no no sí no no sí sí no
-Camello sí no sí no no no no sí sí no sí no no no no no no sí sí no
-Tortuga no no no sí no no sí sí no no no sí no no no sí no no no no
-Lobo sí sí sí no no no no no sí no no no no no no sí sí sí no no
-Tigre sí sí sí no no no no no sí no no no no no no sí sí sí no no
-Rana no no no sí no no sí sí no no no no no sí no sí no no no no
-Perezoso sí no sí no no no no sí sí sí no no no no sí no no sí no no
+Oso-si,si,si,no,no,no,no,no,si,no,no,no,no,si,no,no,si,no,no,no
+Lechuza-no,si,no,no,si,no,no,no,no,si,no,no,no,si,si,si,no,no,no,no
+Venado-si,no,si,no,no,no,no,si,si,no,no,no,no,no,no,no,no,si,no,no
+Paloma-no,no,no,no,si,si,no,no,no,no,no,no,no,si,si,si,no,no,no,no
+Tiburón-no,si,no,si,no,no,si,no,no,no,no,no,no,no,no,no,si,no,si,no
+Elefante-si,no,si,no,no,no,no,si,si,no,no,no,no,no,no,no,no,si,no,si
+Cocodrilo-no,si,si,si,no,no,si,no,no,no,no,si,no,no,no,si,si,si,no,no
+Gato-si,si,si,no,no,si,no,no,si,si,no,no,no,no,no,si,no,si,no,no
+Canguro-si,no,si,no,no,no,no,si,si,no,no,no,no,si,no,no,no,si,si,no
+Serpiente-no,si,no,no,no,no,si,no,no,no,no,si,no,no,no,si,si,no,si,no
+Águila-no,si,no,no,si,no,no,no,no,no,no,no,no,si,si,si,no,no,si,no
+Caballo-si,no,si,no,no,si,no,si,si,no,no,no,no,no,no,no,no,si,si,no
+Cebra-si,no,si,no,no,no,no,si,si,no,no,no,no,no,no,no,no,si,si,no
+Mono-si,no,si,no,no,no,no,si,si,no,no,no,no,si,si,no,no,si,si,no
+Camello-si,no,si,no,no,no,no,si,si,no,si,no,no,no,no,no,no,si,si,no
+Tortuga-no,no,no,si,no,no,si,si,no,no,no,si,no,no,no,si,no,no,no,no
+Lobo-si,si,si,no,no,no,no,no,si,no,no,no,no,no,no,si,si,si,no,no
+Tigre-si,si,si,no,no,no,no,no,si,no,no,no,no,no,no,si,si,si,no,no
+Rana-no,no,si,no,no,si,no,no,no,no,no,no,no,no,si,si,no,no,no,no
+Perezoso-si,no,si,no,no,no,no,si,si,si,no,no,no,no,si,no,no,si,no,no
+Grillo-no,no,si,no,si,si,no,si,no,si,no,no,si,no,si,si,no,no,no,no

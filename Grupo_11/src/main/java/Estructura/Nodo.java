@@ -6,51 +6,25 @@ package Estructura;
 
 /**
  *
- * @author vv
+ * @author Victoria
  */
 public class Nodo {
+    protected String pregunta;
+    protected Nodo si;
+    protected Nodo no;
+    protected String animal;
 
-    protected String contenido;
-    protected Nodo nodoNo, nodoSi;
-    protected boolean esHoja;
-
-    public Nodo(String e) {
-        contenido = e;
-        nodoNo = null;
-        nodoSi = null;
-        esHoja = true;
+    public Nodo(String pregunta) {
+        this.pregunta = pregunta;
     }
 
-    public void addNodoSi(Nodo nuevoNodo) {
-        this.esHoja = false;
-        this.nodoSi = nuevoNodo;
-    }
-
-    public void addNodoNo(Nodo nuevoNodo) {
-        this.esHoja = false;
-        this.nodoNo = nuevoNodo;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-        Nodo nodo = (Nodo) obj;
-        return contenido.equals(nodo.contenido);
-    }
-
-    @Override
-    public int hashCode() {
-        return contenido.hashCode();
+    public Nodo(String pregunta, String animal) {
+        this.pregunta = pregunta;
+        this.animal = animal;
     }
 
     @Override
     public String toString() {
-        return contenido;
+        return "Nodo{" + "pregunta=" + pregunta + ", si=" + si + ", no=" + no + ", animal=" + animal + '}';
     }
-
 }

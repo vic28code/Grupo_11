@@ -1,6 +1,12 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package Estructura;
 
-import java.util.ArrayList;
+import Estructura.Arbol;
+import Estructura.ArbolBuilder;
+import Estructura.Nodo;
 import java.util.List;
 import java.util.Scanner;
 
@@ -9,100 +15,84 @@ import java.util.Scanner;
  * @author vv
  */
 public class PruebaJuego {
-    
-    static ArbolBinario arbol = new ArbolBinario();
-    static List<String> hojas = new ArrayList<>();
-    static Scanner sc = new Scanner(System.in);
-    static Integer preguntasMax;
+    static Scanner scanner = new Scanner(System.in);
+    static String preguntaActual;
     static Nodo nodoActual;
-    
-    public static void main(String[] args) {
 
-        while(true){
-            int contadorPreguntas = 0;
-            Integer respuesta = -1;
-            
-            //Leer datos del archivo .txt
-            Persistencia.cargarDatos(arbol);
-            nodoActual = arbol.getRaiz();
+    public static void main(String[] args){
 
-            //Arbol de animales para esta ronda
-            arbol.imprimirArbol();
-        
-            System.out.println("Ingrese el maximo de preguntas (MAX: 20): ");
-            preguntasMax = sc.nextInt();
-            sc.nextLine();
+        ArbolBuilder.cargarPreguntas();
+        ArbolBuilder.cargarRespuestas();
+        ArbolBuilder.PreguntasOrdenadas();
+        Arbol arbol = ArbolBuilder.construirArbol();
+        nodoActual = arbol.getRaiz();
 
-            while(contadorPreguntas<preguntasMax){
-                //Mientras sea pregunta
-                if(!nodoActual.esHoja){
-                    contadorPreguntas++;
-                    System.out.println("Pregunta "+contadorPreguntas);
-                    System.out.println(nodoActual.contenido);
-                    System.out.println("0. No");
-                    System.out.println("1. Si");
-                    respuesta = sc.nextInt();
-                    sc.nextLine();
-                    
-                    //Si el siguente nodo es diferente de null sigue sino se
-                    // rompe el while
-                    if(arbol.getNextNodo(nodoActual, respuesta)==null){
-                        break;
-                    }
-                    nodoActual = arbol.getNextNodo(nodoActual, respuesta);
-                }
-                else if(nodoActual.esHoja){
-                    //Lanza prediccion e intenta verificar si es correcta
-                    System.out.println("Pensaste en un: "+nodoActual.contenido);
-                    System.out.println("0. No");
-                    System.out.println("1. Si");
-                    int respAcierto = sc.nextInt();
-                    sc.nextLine();
-                    
-                    //De no ser correcta agrega el animal al archivo .txt
-                    if(respAcierto==0){
-                        String AnimalNuevo = "";
-                        String preguntaNueva = "";
-                        
-                        System.out.println("Que animal pensaste");
-                        AnimalNuevo = sc.nextLine();
-                        
-                        //Realiza la pregunta que filtre entre ambos animales
-                        System.out.println("En que se diferencia el"+AnimalNuevo+" de un "+nodoActual.contenido);
-                        preguntaNueva = sc.nextLine();
-                        
-                        Nodo nodoPregunta = arbol.addPregunta(preguntaNueva, nodoActual, respuesta);
-                        arbol.addAnimal(AnimalNuevo, nodoPregunta, respuesta);
-                        System.out.println("Gracias hemos actualizado nuestra base de datos.");
-                    }
-                    break;
-                }
-            }
-            if(preguntasMax==contadorPreguntas){
-                System.out.println("No he podido identificar el animal, estas era las posibles opciones");
-                arbol.getHojas(nodoActual, hojas);
-                System.out.println(hojas);
-            }
-            
-            Persistencia.guardarDatos(arbol);
-            hojas.clear();
-            arbol.clear();
+        int preguntasMaximas = 20; // Por defecto, el número máximo de preguntas
+        int preguntasActuales = 0;
+
+        System.out.print("Ingrese el número de preguntas (por defecto 20): ");
+        if (scanner.hasNextInt()) {
+            preguntasMaximas = scanner.nextInt();
+            scanner.nextLine();
         }
+
+        while (nodoActual != null && preguntasActuales < preguntasMaximas) {
+            if (nodoActual.pregunta == null) {
+                break;
+            }
+
+            if(ArbolBuilder.lanzarRespuesta()){
+                System.out.println("¡El animal es: " + nodoActual.animal + "!");
+                break;
+            }
+
+            preguntaActual = nodoActual.pregunta;
+            String respuestaUser = getRespuestaUser(nodoActual, preguntasActuales);
+
+            if (respuestaUser.equals("si")) {
+                nodoActual = nodoActual.si;
+            } 
+            else if (respuestaUser.equals("no")) {
+                nodoActual = nodoActual.no;
+            }
+
+            try{
+            ArbolBuilder.reducirAnimales(arbol, respuestaUser, preguntaActual);
+            ArbolBuilder.PreguntasOrdenadas();
+            arbol = ArbolBuilder.construirArbol();
+            preguntasActuales++;
+
+
+            }catch(Exception e){
+                System.out.println(e.getMessage());
+                e.printStackTrace();
+            }
+        }
+
+        if (nodoActual != null && nodoActual.animal != null) {
+            System.out.println("¡El animal es: " + nodoActual.animal + "!");
+        } else {
+            System.out.println("No se pudo determinar el animal con las preguntas realizadas.");
+            List<String> animalesPosibles = arbol.obtenerAnimalesPosibles(nodoActual);
+            System.out.println("Animales posibles: " + String.join(", ", animalesPosibles));
+        }
+
+        scanner.close();
+
+        arbol.obtenerAnimalesPosibles(nodoActual);
+        }
+
+    public static String getRespuestaUser(Nodo nodoActual, int numPregunta){
+        System.out.println("Pregunta "+ (numPregunta+1) );
+        System.out.print("¿"+nodoActual.pregunta);
+        System.out.println("(si/no): ");
+        String respuesta = scanner.nextLine().trim().toLowerCase();
+
+
+        //        while(!respuesta.equals("si")|| !respuesta.equals("no")){
+        //            System.out.print("Ingrese una respuesta valida(si/no): ");
+        //            respuesta = scanner.nextLine().trim().toLowerCase();
+        //        }
+        return respuesta;
     }
 }
-
-
-
-
-//               else if(arbol.getNextNodo(nodoActual, respuesta)==null){
-//                //En caso que se haya salido del while porque no hubo una prediccion
-//                //osea el nodo que seguia era null, se ingresa el animal pensado
-//                //por el usuario
-//                System.out.println("No tengo registro de un animal con esas caracteristicas");
-//                 String AnimalNuevo = "";
-//                
-//                System.out.println("Que animal pensaste");
-//                AnimalNuevo = sc.nextLine();
-//                arbol.addAnimal(AnimalNuevo, nodoActual, respuesta);
-//                break;
-//                }
