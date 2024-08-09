@@ -14,15 +14,38 @@ import java.util.Map;
  * @author vv
  */
 public class ArbolBuilder {
-    private static Map<String, Integer> preguntas;
-    private static List<Respuesta> respuestas;
-    private static List<String> listaPreguntas;
-    private static List<Map.Entry<String, Integer>> preguntasOrdenadas;
+    
     private static final String ARCHIVO_PREGUNTAS = "src/main/resources/archivos/preguntas.txt";
     private static final String ARCHIVO_RESPUESTAS = "src/main/resources/archivos/respuestas.txt";
-
     
-    public static void cargarPreguntas(){
+    private static List<Respuesta> respuestas;
+    private static List<String> listaPreguntas;
+    private static Map<String, Integer> preguntasContadas;
+    private static List<Map.Entry<String, Integer>> preguntasOrdenadas;
+    
+    
+    public static int cantidadRespuestasPosibles(){
+        return respuestas.size();
+    }
+    
+    //Se usa solo al inicio para cargar los datos de los archivos de texto
+    public static Arbol inicializarArbol(){
+        ArbolBuilder.cargarPreguntas();
+        ArbolBuilder.cargarRespuestas();
+        ArbolBuilder.ordenasPreguntas();
+        return ArbolBuilder.construirArbol();
+    }
+    
+    //Se usa cada vez que se hace una pregunta para reducir los animales posibles
+    //y las preguntas que no tengan nigun si como respuesta
+    public static Arbol ReducirArbol(String respuestaUser, String preguntaActual){
+        ArbolBuilder.reducirAnimales(respuestaUser, preguntaActual);
+        ArbolBuilder.ordenasPreguntas();
+        return ArbolBuilder.construirArbol();
+    }
+    
+    
+    private static void cargarPreguntas(){
         listaPreguntas = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(ARCHIVO_PREGUNTAS))) {
             String linea;
@@ -37,7 +60,8 @@ public class ArbolBuilder {
         System.out.println(listaPreguntas.toString());
     }
 
-    public static void cargarRespuestas() {
+    
+    private static void cargarRespuestas() {
         respuestas = new ArrayList<>();
         
         try (BufferedReader br = new BufferedReader(new FileReader(ARCHIVO_RESPUESTAS))) {
@@ -60,30 +84,32 @@ public class ArbolBuilder {
         
     }
     
-    public static void PreguntasOrdenadas() {
-        preguntas = new HashMap<>();
+    //Cuenta la cantidad de "si" que tiene cada pregunta entre los animales actuales
+    private static void ordenasPreguntas() {
+        preguntasContadas = new HashMap<>();
         
         for (Respuesta respuesta : respuestas) {
             for(String p: listaPreguntas){
-                if(respuesta.getRespuestas().getOrDefault(p,"no").equals("si")){
-                    preguntas.put(p, preguntas.getOrDefault(p, 0)+1);
+                //Se agregan solo preguntas que tiene al menos un Si en algun animal
+                if(respuesta.getRespuestas().get(p).equals("si")){
+                    preguntasContadas.put(p, preguntasContadas.getOrDefault(p, 0)+1);
                 }
             }
         }
-        preguntasOrdenadas = new ArrayList<>(preguntas.entrySet());
+        preguntasOrdenadas = new ArrayList<>(preguntasContadas.entrySet());
         preguntasOrdenadas.sort((a, b) -> b.getValue().compareTo(a.getValue()));
         
         System.out.println("Tamaño lista preguntas Ordenadas -> "+preguntasOrdenadas.size());
         System.out.println(preguntasOrdenadas.toString());
     }
 
-    public static Arbol construirArbol() {
+    private static Arbol construirArbol() {
         Nodo raiz = new Nodo(preguntasOrdenadas.get(0).getKey());
         String[] respuestasPorAnimal;
         int c;
         
         for(Respuesta r: respuestas){
-            respuestasPorAnimal = new String[r.getRespuestas().size()];
+            respuestasPorAnimal = new String[preguntasOrdenadas.size()];
             c = 0;
             for(Map.Entry<String, Integer> entry : preguntasOrdenadas){
                 respuestasPorAnimal[c] = r.getRespuestas().get(entry.getKey());
@@ -107,7 +133,7 @@ public class ArbolBuilder {
                         ( preguntasOrdenadas.get(indice + 1).getKey() ) : null);
             }
             agregarNodo(nodo.si, respuestas, indice + 1, animal);
-        } else if (respuesta.equals("no")) {
+        }if (respuesta.equals("no")) {
             if (nodo.no == null) {
                 nodo.no = new Nodo( (indice + 1 < preguntasOrdenadas.size() ) ? 
                         ( preguntasOrdenadas.get(indice + 1).getKey() ) : null);
@@ -117,28 +143,19 @@ public class ArbolBuilder {
     }
     
     
-    public static void reducirAnimales(Arbol arbol, String respuesta, String pregunta){
+    private static void reducirAnimales(String respuesta, String pregunta){
         List<Respuesta> temp = new ArrayList<>();
-        listaPreguntas.remove(pregunta);
-        
-        System.out.println("RESPUESTAS ANTES -> "+respuestas);
-        for(Respuesta r: respuestas){
+        listaPreguntas.remove(pregunta);//Se borra la pregunta ya lanzada del banco de preguntas
 
+        for(Respuesta r: respuestas){
+            //Añade solo los animales que coincidan con la respuesta del usuario 
             if((r.getRespuestas().get(pregunta).equals(respuesta))){
-                r.borrarRespuesta(pregunta);
+                r.borrarRespuesta(pregunta);//borra la pregunta ya lanzada de las respuestas de cada animal
                 temp.add(r);
             }
         }
-        respuestas = temp;
-        System.out.println("RESPUESTAS DESPUES -> "+respuestas);
-        
+        respuestas = temp;//se actualizan los elementos de la lista respuestas
+        System.out.println("Posibles respuestas: -> "+respuestas.size());
+        System.out.println("RESPUESTAS -> "+respuestas);
     }
-    
-    public static boolean lanzarRespuesta(){
-        return respuestas.size()==1;
-    }
-    
-    
-
- 
 }

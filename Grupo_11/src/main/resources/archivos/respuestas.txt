@@ -2,13 +2,13 @@ Oso-si,si,si,no,no,no,no,no,si,no,no,no,no,si,no,no,si,no,no,no
 Lechuza-no,si,no,no,si,no,no,no,no,si,no,no,no,si,si,si,no,no,no,no
 Venado-si,no,si,no,no,no,no,si,si,no,no,no,no,no,no,no,no,si,no,no
 Paloma-no,no,no,no,si,si,no,no,no,no,no,no,no,si,si,si,no,no,no,no
-Tiburón-no,si,no,si,no,no,si,no,no,no,no,no,no,no,no,no,si,no,si,no
+Tiburon-no,si,no,si,no,no,si,no,no,no,no,no,no,no,no,no,si,no,si,no
 Elefante-si,no,si,no,no,no,no,si,si,no,no,no,no,no,no,no,no,si,no,si
 Cocodrilo-no,si,si,si,no,no,si,no,no,no,no,si,no,no,no,si,si,si,no,no
 Gato-si,si,si,no,no,si,no,no,si,si,no,no,no,no,no,si,no,si,no,no
 Canguro-si,no,si,no,no,no,no,si,si,no,no,no,no,si,no,no,no,si,si,no
 Serpiente-no,si,no,no,no,no,si,no,no,no,no,si,no,no,no,si,si,no,si,no
-Águila-no,si,no,no,si,no,no,no,no,no,no,no,no,si,si,si,no,no,si,no
+Aguila-no,si,no,no,si,no,no,no,no,no,no,no,no,si,si,si,no,no,si,no
 Caballo-si,no,si,no,no,si,no,si,si,no,no,no,no,no,no,no,no,si,si,no
 Cebra-si,no,si,no,no,no,no,si,si,no,no,no,no,no,no,no,no,si,si,no
 Mono-si,no,si,no,no,no,no,si,si,no,no,no,no,si,si,no,no,si,si,no
