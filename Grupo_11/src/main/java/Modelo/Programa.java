@@ -7,6 +7,6 @@ public class Programa {
 
     @FXML
     private void play() throws IOException {
-        App.setRoot("secondary");
+        App.setRoot("juego");
     }
 }
