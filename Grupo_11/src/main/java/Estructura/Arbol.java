@@ -17,6 +17,7 @@ public class Arbol {
     public Nodo getRaiz(){
         return raiz;
     }
+    
 
     public List<String> obtenerAnimalesPosibles(Nodo nodo) {
         List<String> animales = new ArrayList<>();
@@ -35,4 +36,27 @@ public class Arbol {
         }
         return animales;
     }   
+    
+    public List<String> recorrer() {
+        List<String> hojas = new ArrayList<>();
+        recorrerHojas(raiz, hojas);
+        return hojas;
+    }
+
+    private void recorrerHojas(Nodo nodo, List<String> hojas) {
+        if (nodo == null) {
+            return;
+        }
+        if (nodo.si == null && nodo.no == null) {
+            hojas.add(nodo.animal); // O el dato que almacene en la hoja
+        } else {
+            if (nodo.si != null) {
+                recorrerHojas(nodo.si, hojas);
+            }
+            if (nodo.no != null) {
+                recorrerHojas(nodo.no, hojas);
+            }
+        }
+    }
+    
 }

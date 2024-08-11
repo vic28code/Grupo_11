@@ -18,10 +18,10 @@ public class ArbolBuilder {
     private static final String ARCHIVO_PREGUNTAS = "src/main/resources/archivos/preguntas.txt";
     private static final String ARCHIVO_RESPUESTAS = "src/main/resources/archivos/respuestas.txt";
     
-    private static List<Respuesta> respuestas;
-    private static List<String> listaPreguntas;
-    private static Map<String, Integer> preguntasContadas;
-    private static List<Map.Entry<String, Integer>> preguntasOrdenadas;
+    public static List<Respuesta> respuestas;
+    public static List<String> listaPreguntas;
+    public static Map<String, Integer> preguntasContadas;
+    public static List<Map.Entry<String, Integer>> preguntasOrdenadas;
     
     
     public static int cantidadRespuestasPosibles(){
