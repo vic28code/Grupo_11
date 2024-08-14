@@ -6,6 +6,7 @@ package Modelo;
 
 import Estructura.Arbol;
 import Estructura.ArbolBuilder;
+import Estructura.Nodo;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -31,9 +32,13 @@ public class PreguntasController implements Initializable {
     @FXML
     private Button btnno;
     
+    public static int nresultado;
+    public static Arbol arbol_resultante;
     private int indexPreguntaActual = 0;
     private String preguntaActual;
-    private Arbol arbolReducido;
+    private Nodo nodoActual;
+    private String respuesta_user;
+    
     
     /**
      * Initializes the controller class.
@@ -41,43 +46,43 @@ public class PreguntasController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         this.nrestantes.setText(String.valueOf(JuegoController.npreguntas));
-        mostrarPreguntas();
-        btnsi.setOnAction(event -> manejarRespuesta(true));
-        btnno.setOnAction(event -> manejarRespuesta(false));
-    }    
-    
-    //Se asume preguntas.txt como principal, falta implementar cuando el usuario elige 
-    public void mostrarPreguntas(){
-        ArbolBuilder.inicializarArbol();
-        preguntaActual=ArbolBuilder.listaPreguntas.get(indexPreguntaActual);
+        arbol_resultante = ArbolBuilder.inicializarArbol();
+        nodoActual = arbol_resultante.getRaiz();
+        preguntaActual = nodoActual.pregunta;
         pregunta.setText(preguntaActual);
         
-    }
+        btnsi.setOnAction(event -> manejarRespuesta("si"));
+        btnno.setOnAction(event -> manejarRespuesta("no"));}    
     
-    private void manejarRespuesta(boolean respuesta) {
-      //  ArbolBuilder.ReducirArbol(String.valueOf(respuesta),preguntaActual );
-        System.out.println(respuesta );
-        System.out.println("!!!!!IMPORTANTE: SIZE LISTAPREGUNTAS: " +ArbolBuilder.listaPreguntas.size());
+    public void manejarRespuesta(String respuesta){
+        respuesta_user = respuesta;
+        arbol_resultante = ArbolBuilder.ReducirArbol(respuesta_user, preguntaActual);
+       
+        if (arbol_resultante.getRaiz() == null) {
+            resultado(0);  
+            return;
+        }
+        nodoActual = arbol_resultante.getRaiz();
+        nresultado = arbol_resultante.recorrer().size();
         
-         
-        JuegoController.npreguntas--;
-        this.nrestantes.setText(String.valueOf(JuegoController.npreguntas));
-        indexPreguntaActual++;
-        if (JuegoController.npreguntas <= 0) {
-            resultado();
+        if (indexPreguntaActual >= JuegoController.npreguntas - 1 || nresultado==0) {
+            resultado(nresultado);
         } else {
-            mostrarPreguntas();
+            preguntaActual = nodoActual.pregunta;
+            pregunta.setText(preguntaActual);
+            indexPreguntaActual++;
+            nrestantes.setText(String.valueOf(JuegoController.npreguntas - indexPreguntaActual));
         }
     }
+    
      
-    private void resultado(){
-//        System.out.println(arbolReducido.recorrer());
+    private void resultado(int n){
         try {
+            this.nresultado=n;
             App.setRoot("resultado");
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-     
     }
     
 }

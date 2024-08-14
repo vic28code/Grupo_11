@@ -35,7 +35,7 @@ public class JuegoController implements Initializable {
     
     @FXML
     private void siguiente(ActionEvent event) throws IOException {
-        if(isInteger(ningresado.getText()) && Integer.parseInt(ningresado.getText())<20 ){
+        if(isInteger(ningresado.getText()) && Integer.parseInt(ningresado.getText())<=20 ){
             this.npreguntas=Integer.parseInt(ningresado.getText());
             App.setRoot("preguntas");
         } else {

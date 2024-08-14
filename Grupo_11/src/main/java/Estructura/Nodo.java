@@ -9,7 +9,7 @@ package Estructura;
  * @author Victoria
  */
 public class Nodo {
-    protected String pregunta;
+    public String pregunta;
     protected Nodo si;
     protected Nodo no;
     protected String animal;

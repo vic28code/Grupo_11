@@ -39,9 +39,13 @@ public class ArbolBuilder {
     //Se usa cada vez que se hace una pregunta para reducir los animales posibles
     //y las preguntas que no tengan nigun si como respuesta
     public static Arbol ReducirArbol(String respuestaUser, String preguntaActual){
-        ArbolBuilder.reducirAnimales(respuestaUser, preguntaActual);
-        ArbolBuilder.ordenasPreguntas();
-        return ArbolBuilder.construirArbol();
+        reducirAnimales(respuestaUser, preguntaActual);
+        ordenasPreguntas();
+        if (respuestas.isEmpty()) {
+            return new Arbol(null);  // O maneja esto según tus necesidades
+        }
+        
+        return construirArbol();
     }
     
     
@@ -104,6 +108,10 @@ public class ArbolBuilder {
     }
 
     private static Arbol construirArbol() {
+        if (preguntasOrdenadas.isEmpty()) {
+            System.out.println("No hay preguntas disponibles para construir el árbol.");
+            return new Arbol(null);  // O maneja esto de otra manera según tus necesidades
+        }
         Nodo raiz = new Nodo(preguntasOrdenadas.get(0).getKey());
         String[] respuestasPorAnimal;
         int c;
