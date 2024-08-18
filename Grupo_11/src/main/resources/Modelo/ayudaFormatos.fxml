@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="430.0" prefWidth="350.0" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Formato del archivo preguntas">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <VBox alignment="TOP_CENTER">
+         <children>
+            <ImageView fitHeight="156.0" fitWidth="296.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/fotoFormatoPreguntas.PNG" />
+               </image>
+            </ImageView>
+         </children>
+      </VBox>
+      <Label text="Formato del archivo respuestas">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <VBox prefHeight="41.0" prefWidth="200.0">
+         <VBox.margin>
+            <Insets bottom="5.0" left="40.0" right="40.0" top="5.0" />
+         </VBox.margin>
+         <children>
+            <ImageView fitHeight="119.0" fitWidth="295.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../imagenes/fotoFormatoRespuestas.PNG" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </ImageView>
+            <Label prefHeight="19.0" prefWidth="277.0" text="Es importante que la cantidad de respuestas sea">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+            <Label text="igual a la cantidad de preguntas en cada elemento">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>

@@ -7,9 +7,16 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
@@ -24,6 +31,7 @@ public class CargarMiArbolController implements Initializable {
     @FXML Button btnSubirRespuestas;
     @FXML Label estadoSubirPreguntas;
     @FXML Label estadoSubirRespuestas;
+    @FXML ImageView iconoAyuda;
     
     private Arbol arbol;
     
@@ -40,6 +48,7 @@ public class CargarMiArbolController implements Initializable {
         subirPreguntas();
         volver();
         continuar();
+        botonAyuda();
     }
     
     public void subirPreguntas(){
@@ -72,7 +81,7 @@ public class CargarMiArbolController implements Initializable {
             btnContinuar.setDisable(false);
             }
             catch(Exception ex){
-                estadoSubirRespuestas.setText("Hubo un error al cargar el archivo");
+                estadoSubirRespuestas.setText("El archivo no cuenta con el formato adecuado");
                 estadoSubirRespuestas.setStyle("-fx-text-fill: red;");
                 ex.printStackTrace();
             }
@@ -99,6 +108,25 @@ public class CargarMiArbolController implements Initializable {
                     ex.printStackTrace();
                 }
             }
+        });
+    }
+    
+    public void botonAyuda(){
+        iconoAyuda.setOnMouseClicked((MouseEvent e)->{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ayudaFormatos.fxml"));
+            VBox vbox;
+            try {
+                vbox = loader.load();
+                Alert alert = new Alert(AlertType.NONE);
+                alert.getDialogPane().setContent(vbox);
+                alert.setTitle("Formato de los archivos");
+                alert.getButtonTypes().addAll(ButtonType.CLOSE);
+                alert.showAndWait();
+            } 
+            catch (IOException ex) {
+                ex.printStackTrace();
+            }
+
         });
     }
     
