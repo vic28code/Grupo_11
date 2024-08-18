@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXMLController.java to edit this template
- */
 package Modelo;
 
 import Estructura.Arbol;
@@ -13,7 +9,6 @@ import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-
 import javafx.scene.control.Label;
 /**
  * FXML Controller class
@@ -46,7 +41,7 @@ public class PreguntasController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         this.nrestantes.setText(String.valueOf(JuegoController.npreguntas));
-        arbol_resultante = ArbolBuilder.inicializarArbol();
+        arbol_resultante = App.arbol;
         nodoActual = arbol_resultante.getRaiz();
         preguntaActual = nodoActual.pregunta;
         pregunta.setText(preguntaActual);

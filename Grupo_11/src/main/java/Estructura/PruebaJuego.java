@@ -14,7 +14,7 @@ public class PruebaJuego {
 
     public static void main(String[] args){
 
-        Arbol arbol = ArbolBuilder.inicializarArbol();
+        Arbol arbol = ArbolBuilder.inicializarArbol("preguntas.txt", "respuestas.txt");
         nodoActual = arbol.getRaiz();
 
         int preguntasMaximas = 20; // Por defecto, el número máximo de preguntas

@@ -9,16 +9,16 @@ import java.util.Map;
  */
 public class Respuesta {
     
-    private final String animal;
+    private final String elemento;
     private Map<String,String> respuestas;
 
     public Respuesta(String animal) {
-        this.animal = animal;
+        this.elemento = animal;
         this.respuestas = new HashMap<>();
     }
 
     public String getAnimal() {
-        return animal;
+        return elemento;
     }
 
     public Map<String, String> getRespuestas() {
@@ -41,7 +41,7 @@ public class Respuesta {
 
     @Override
     public String toString() {
-        return "Respuesta{" + "animal=" + animal+"}";
+        return "Respuesta{" + "nombre=" + elemento+"}";
     }
 
     

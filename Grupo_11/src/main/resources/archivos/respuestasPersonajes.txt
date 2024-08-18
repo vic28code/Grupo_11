@@ -1,0 +1,20 @@
+Albert Einstein-si,no,no,no,no,si,no,si,no,si,no,no,si,no,no,no,no,no,si,no
+Leonardo da Vinci-si,si,no,no,no,no,no,si,no,si,no,no,si,no,no,no,no,no,si,no
+Barack Obama-no,no,si,si,si,si,no,no,si,no,no,no,si,no,no,si,no,no,no,si
+Marilyn Monroe-no,si,no,no,no,no,si,no,si,no,no,no,si,no,no,no,no,si,si,no
+Martin Luther King Jr.-si,no,no,no,si,no,no,no,si,no,no,si,si,no,si,no,no,no,si,si
+Mahatma Gandhi-si,no,no,no,si,no,no,no,no,no,no,si,no,si,si,no,no,no,si,si
+Mozart-si,si,no,no,no,no,no,no,no,no,si,no,no,no,no,no,no,no,si,no
+Walt Disney-no,si,no,no,no,si,si,no,si,no,no,no,si,no,no,no,no,si,si,no
+Oprah Winfrey-no,no,si,si,no,si,no,no,si,si,no,no,si,no,no,no,no,no,si,si
+Steve Jobs-no,no,si,no,no,si,no,no,si,no,no,no,si,no,no,no,no,no,si,si
+Michael Jackson-no,si,no,no,no,si,si,no,si,no,si,no,si,no,no,no,no,si,no,no
+Frida Kahlo-no,si,no,no,no,no,no,si,no,no,si,no,si,no,si,no,no,no,no,no
+Nelson Mandela-si,no,no,no,si,si,no,no,no,no,no,si,si,no,si,no,no,no,si,si
+Cleopatra-si,no,no,no,no,no,no,si,no,no,no,no,no,no,no,no,no,no,si,no
+William Shakespeare-si,si,no,no,no,no,no,si,no,si,no,no,si,no,no,no,no,no,si,no
+Elon Musk-no,no,si,si,no,si,no,no,si,no,no,no,si,no,no,no,no,no,si,si
+Winston Churchill-si,no,no,no,si,si,no,si,no,no,no,si,si,no,no,no,no,si,si,no
+John F. Kennedy-no,no,no,no,si,si,no,no,si,no,no,no,si,no,no,si,si,no,no,no
+Lady Gaga-no,si,si,si,no,si,si,no,si,no,si,no,si,no,no,no,si,no,si,no
+Pablo Picasso-si,si,no,no,no,no,no,si,no,no,no,no,si,no,no,no,no,no,si,no

@@ -1,10 +1,6 @@
 package Estructura;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,9 +10,6 @@ import java.util.Map;
  * @author vv
  */
 public class ArbolBuilder {
-    
-    private static final String ARCHIVO_PREGUNTAS = "src/main/resources/archivos/preguntas.txt";
-    private static final String ARCHIVO_RESPUESTAS = "src/main/resources/archivos/respuestas.txt";
     
     public static List<Respuesta> respuestas;
     public static List<String> listaPreguntas;
@@ -29,9 +22,17 @@ public class ArbolBuilder {
     }
     
     //Se usa solo al inicio para cargar los datos de los archivos de texto
-    public static Arbol inicializarArbol(){
-        ArbolBuilder.cargarPreguntas();
-        ArbolBuilder.cargarRespuestas();
+    //Crea el arbol con los archivos de texto existentes en el programa
+    public static Arbol inicializarArbol(String nombreFilePreguntas, String nombreFileRespuestas){
+        ArbolBuilder.cargarPreguntas(nombreFilePreguntas);
+        ArbolBuilder.cargarRespuestas(nombreFileRespuestas);
+        ArbolBuilder.ordenasPreguntas();
+        return ArbolBuilder.construirArbol();
+    }
+    
+    //Se usa solo al inicio para cargar los datos de los archivos de texto
+    //Crea el arbol a partir de los archivos que suba el usuario
+    public static Arbol inicializarArbolExterno(){
         ArbolBuilder.ordenasPreguntas();
         return ArbolBuilder.construirArbol();
     }
@@ -49,43 +50,27 @@ public class ArbolBuilder {
     }
     
     
-    private static void cargarPreguntas(){
-        listaPreguntas = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(ARCHIVO_PREGUNTAS))) {
-            String linea;
-            while ((linea = br.readLine()) != null) {
-                listaPreguntas.add(linea);
-            }
-        }catch(IOException e){
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-        }
+    public static void cargarPreguntasExternas() throws Exception{
+        listaPreguntas = new ArrayList<>(); 
+        listaPreguntas = Persistencia.cargarPreguntasExternas();
         System.out.println("Tamaño lista preguntas -> "+listaPreguntas.size());
-        System.out.println(listaPreguntas.toString());
     }
-
-    
-    private static void cargarRespuestas() {
+    public static void cargarRespuestasExternas() throws Exception{
         respuestas = new ArrayList<>();
-        
-        try (BufferedReader br = new BufferedReader(new FileReader(ARCHIVO_RESPUESTAS))) {
-            String linea;
-            while ((linea = br.readLine()) != null) {
-                String[] partes = linea.split("-");
-                Respuesta animal = new Respuesta(partes[0]);
-                List<String> respuestasAnimal = Arrays.asList(partes[1].split(","));            
-                for(int c=0; c<respuestasAnimal.size();c++){
-                    animal.setRespuesta(listaPreguntas.get(c), respuestasAnimal.get(c));
-                }
-                respuestas.add(animal);
-            }
-        }catch(IOException e){
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-        }
+        respuestas = Persistencia.cargarRespuestasExternas(listaPreguntas);
         System.out.println("Tamaño lista respuestas -> "+respuestas.size());
-        System.out.println(respuestas.toString());
-        
+    }
+    
+    
+    private static void cargarPreguntas(String nombreArchivo){
+        listaPreguntas = new ArrayList<>(); 
+        listaPreguntas = Persistencia.cargarPreguntas(nombreArchivo);
+        System.out.println("Tamaño lista preguntas -> "+listaPreguntas.size());
+    }
+    private static void cargarRespuestas(String nombreArchivo) {
+        respuestas = new ArrayList<>();
+        respuestas = Persistencia.cargarRespuestas(nombreArchivo, listaPreguntas);
+        System.out.println("Tamaño lista respuestas -> "+respuestas.size());
     }
     
     //Cuenta la cantidad de "si" que tiene cada pregunta entre los animales actuales
@@ -166,4 +151,5 @@ public class ArbolBuilder {
         System.out.println("Posibles respuestas: -> "+respuestas.size());
         System.out.println("RESPUESTAS -> "+respuestas);
     }
+    
 }

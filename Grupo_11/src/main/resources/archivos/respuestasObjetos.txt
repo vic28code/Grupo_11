@@ -1,0 +1,20 @@
+Telefono movil-si,si,si,si,si,no,si,no,no,no,no,si,si,no,no,no,no,no,si,no
+Silla-si,no,si,si,no,no,no,si,si,no,no,no,no,no,no,no,no,no,no,no
+Computadora-si,si,si,si,si,no,si,no,si,no,no,si,si,no,no,no,no,no,si,no
+Television-si,si,si,si,no,no,si,no,no,no,no,si,si,no,no,no,no,no,si,no
+Libro-si,no,si,si,si,no,no,no,si,no,no,no,no,si,no,no,no,no,si,no
+Lapiz-si,no,si,si,si,no,no,no,si,no,no,no,no,si,si,no,no,no,no,no
+Mesa-si,no,si,si,no,no,no,si,si,no,no,no,no,no,no,no,no,no,no,no
+Reloj-si,si,si,si,si,no,no,no,no,no,no,no,si,no,no,no,no,no,si,no
+Auto-si,si,si,no,no,no,no,no,no,si,no,si,si,no,no,no,si,no,si,si
+Tijeras-si,no,si,si,no,no,no,no,si,no,no,no,no,no,no,no,no,no,si,si
+Lampara-si,no,si,si,no,no,no,no,si,no,no,no,si,no,no,no,no,no,si,no
+Cuchillo-si,no,si,si,no,si,no,no,no,no,no,no,no,no,no,si,no,no,no,si
+Cuchara-si,no,si,si,no,si,no,no,no,no,no,no,no,no,no,no,no,no,no,no
+Guitarra-si,no,si,si,no,no,si,no,no,no,no,si,no,no,no,no,no,no,si,no
+Bicicleta-si,si,si,no,no,no,no,no,no,si,no,si,no,no,no,no,si,no,si,no
+Impresora-si,si,si,si,no,no,no,no,si,no,no,no,si,no,no,no,no,no,si,no
+Bateria-no,no,si,si,no,no,si,no,no,no,no,si,no,no,no,no,no,no,no,no
+Termometro-si,no,si,si,no,no,no,no,no,no,no,no,no,no,no,no,si,si,no,no
+Espejo-si,no,si,si,no,no,no,si,no,no,no,no,no,no,no,no,no,no,si,no
+Sombrero-si,no,si,no,si,no,no,no,no,no,si,no,no,no,no,no,no,no,no,no
