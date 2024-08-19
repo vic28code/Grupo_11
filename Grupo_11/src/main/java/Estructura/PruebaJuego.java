@@ -56,14 +56,14 @@ public class PruebaJuego {
             }catch(Exception e){
                 System.out.println("Cantidad de Animales Posibles -> "+ArbolBuilder.cantidadRespuestasPosibles());
                 System.out.println("Lo siento pero no conozco un animal con esas caracteristicas");
-                System.out.println("!GANASTE!");
+                System.out.println("¡GANASTE!");
             }
         }
         
         if (ArbolBuilder.cantidadRespuestasPosibles()>0 && preguntasActuales == preguntasMaximas) {
-            System.out.println("No se pudo determinar el animal con las preguntas realizadas.");
+            System.out.println("La cantidad de preguntas no me permitió determinar una respuesta concreta pero creo que podría ser...");
             List<String> animalesPosibles = arbol.obtenerAnimalesPosibles(nodoActual);
-            System.out.println("Animales posibles: " + String.join(", ", animalesPosibles));
+            System.out.println(String.join("o ", animalesPosibles));
         }
         scanner.close();
     }
