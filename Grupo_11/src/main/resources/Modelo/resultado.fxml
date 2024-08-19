@@ -47,7 +47,7 @@
             </ImageView>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <Label fx:id="label1" alignment="CENTER" contentDisplay="CENTER" maxWidth="270.0" textAlignment="CENTER" wrapText="true">
+                  <Label fx:id="label1" alignment="CENTER" contentDisplay="CENTER" maxWidth="270.0" textAlignment="CENTER">
                      <font>
                         <Font size="15.0" />
                      </font>
@@ -55,7 +55,7 @@
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
                   </Label>
-                  <Label fx:id="label2" alignment="CENTER" maxWidth="270.0" wrapText="true">
+                  <Label fx:id="label2" alignment="CENTER" maxWidth="270.0">
                      <font>
                         <Font size="15.0" />
                      </font>

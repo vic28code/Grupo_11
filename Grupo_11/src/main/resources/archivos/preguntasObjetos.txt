@@ -1,20 +1,20 @@
-Es un objeto de uso diario?
-Es un objeto tecnologico?
-Es de un material solido?
-Es un objeto que se encuentra en el hogar?
-Es un objeto portatil?
-Es utilizado en la cocina?
-Es utilizado para el entretenimiento?
-Es un objeto decorativo?
-Es un objeto de oficina?
-Es un objeto que se usa para transporte?
-Es de origen natural?
-Es un objeto que puede producir sonido?
-Es un objeto que necesita electricidad para funcionar?
-Es un objeto utilizado para almacenar cosas?
-Es un objeto que se usa para escribir?
-Es un objeto que se usa para limpiar?
-Es un objeto que se usa al aire libre?
-Es un objeto que se usa para medir algo?
-Es un objeto que puede tener multiples usos?
-Es un objeto que puede ser peligroso?
+¿Es un objeto de uso diario?
+¿Es un objeto tecnologico?
+¿Es de un material solido?
+¿Es un objeto que se encuentra en el hogar?
+¿Es un objeto portatil?
+¿Es utilizado en la cocina?
+¿Es utilizado para el entretenimiento?
+¿Es un objeto decorativo?
+¿Es un objeto de oficina?
+¿Es un objeto que se usa para transporte?
+¿Es de origen natural?
+¿Es un objeto que puede producir sonido?
+¿Es un objeto que necesita electricidad para funcionar?
+¿Es un objeto utilizado para almacenar cosas?
+¿Es un objeto que se usa para escribir?
+¿Es un objeto que se usa para limpiar?
+¿Es un objeto que se usa al aire libre?
+¿Es un objeto que se usa para medir algo?
+¿Es un objeto que puede tener multiples usos?
+¿Es un objeto que puede ser peligroso?

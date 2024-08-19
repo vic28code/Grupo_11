@@ -24,6 +24,7 @@ public class App extends Application {
         stage.setScene(scene);
         stage.getIcons().add(loadImage("src/main/resources/imagenes/iconos/lamparaIcon.png"));
         stage.setTitle("Juego - 20 Preguntas");
+        stage.setResizable(false);
         stage.show();
     }
 

@@ -1,20 +1,20 @@
-Es este animal un mamifero?
-Es este animal un carnivoro?
-Tiene este animal cuatro patas o mas?
-Vive este animal en el agua?
-Puede este animal volar?
-Se puede domesticar(tener de mascota)?
-Tiene este animal escamas?
-Es este animal un herbivoro?
-Tiene este animal un pelaje?
-Es este animal nocturno?
-Vive este animal en el desierto?
-Es este animal un reptil?
-Es este animal un insecto?
-Puede este animal caminar facilmente en 2 patas?
-Vive este animal en arboles?
-Es este animal oviparo?
-Es este animal salvaje?
-Tiene este animal una cola larga?
-Es este animal conocido por su velocidad?
-Tiene este animal una trompa?
+¿Es este animal un mamifero?
+¿Es este animal un carnivoro?
+¿Tiene este animal cuatro patas o mas?
+¿Vive este animal en el agua?
+¿Puede este animal volar?
+¿Se puede domesticar(tener de mascota)?
+¿Tiene este animal escamas?
+¿Es este animal un herbivoro?
+¿Tiene este animal un pelaje?
+¿Es este animal nocturno?
+¿Vive este animal en el desierto?
+¿Es este animal un reptil?
+¿Es este animal un insecto?
+¿Puede este animal caminar facilmente en 2 patas?
+¿Vive este animal en arboles?
+¿Es este animal oviparo?
+¿Es este animal salvaje?
+¿Tiene este animal una cola larga?
+¿Es este animal conocido por su velocidad?
+¿Tiene este animal una trompa?

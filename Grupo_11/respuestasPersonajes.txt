@@ -1,0 +1,5 @@
+pedro pascal-no,no,no,no,no,no,no,no,no,no,no,no,no,no,no,sí,no,no
+-no,no,no,no,no,no,no,no,no,no,no,no,no,no,no,sí,no,no
+Daniel Noboa-sí,no,no,sí,sí,no,no,no,sí,no,no,no,sí,sí,no,no,no,no
+Daniel Noboa-sí,no,no,sí,sí,no,no,no,sí,no,no,no,sí,sí,no,no,no,no
+Prueba-no,no,no,no,no,sí,no,no,no,sí,no,no,no,no,no,no,no,no
