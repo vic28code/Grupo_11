@@ -60,7 +60,7 @@ public class PreguntasController implements Initializable {
         nodoActual = arbol_resultante.getRaiz();
         nresultado = arbol_resultante.recorrer().size();
         
-        if (indexPreguntaActual >= JuegoController.npreguntas - 1 || nresultado==0) {
+        if (indexPreguntaActual >= JuegoController.npreguntas - 1 || nresultado==0 || arbol_resultante.obtenerAnimalesPosibles(nodoActual).size()==1) {
             resultado(nresultado);
         } else {
             preguntaActual = nodoActual.pregunta;
