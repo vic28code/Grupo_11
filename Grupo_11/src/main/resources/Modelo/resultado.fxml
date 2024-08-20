@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FAF3DD;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Modelo.ResultadoController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FAF3DD;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Modelo.ResultadoController">
    <top>
       <Label text="20 PREGUNTAS" BorderPane.alignment="CENTER">
          <font>
@@ -48,7 +48,7 @@
                   <Insets left="60.0" />
                </GridPane.margin>
             </ImageView>
-            <VBox alignment="CENTER" fillWidth="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <VBox alignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
                <children>
                   <Label fx:id="label1" alignment="CENTER" contentDisplay="CENTER">
                      <font>
@@ -58,7 +58,7 @@
                         <Insets bottom="5.0" top="5.0" />
                      </VBox.margin>
                   </Label>
-                  <Label fx:id="label2" alignment="CENTER" wrapText="true">
+                  <Label fx:id="label2" alignment="CENTER" contentDisplay="CENTER">
                      <font>
                         <Font name="Verdana" size="15.0" />
                      </font>

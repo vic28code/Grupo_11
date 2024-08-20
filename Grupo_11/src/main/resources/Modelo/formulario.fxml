@@ -5,18 +5,31 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox fx:id="vboxPreguntas" alignment="CENTER" prefHeight="595.0" prefWidth="667.0" spacing="20.0" style="-fx-background-color: #FAF3DD;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Modelo.FormularioController">
+<VBox fx:id="vboxPreguntas" alignment="CENTER" prefHeight="595.0" prefWidth="667.0" spacing="20.0" style="-fx-background-color: #FAF3DD;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Modelo.FormularioController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
    <children>
-      <Label text="FORMULARIO" />
-      <Label fx:id="question" alignment="CENTER" contentDisplay="CENTER" />
+      <Label text="FORMULARIO" textFill="#ae27a1">
+         <font>
+            <Font name="Mistral" size="34.0" />
+         </font></Label>
+      <Label fx:id="question" alignment="CENTER" contentDisplay="CENTER" textFill="#ae2727">
+         <font>
+            <Font name="Maiandra GD" size="23.0" />
+         </font></Label>
       <HBox alignment="CENTER" prefHeight="63.0" prefWidth="627.0" spacing="80.0">
          <children>
-            <Button fx:id="si" mnemonicParsing="false" text="Si" />
-            <Button fx:id="no" mnemonicParsing="false" text="No" />
+            <Button fx:id="si" mnemonicParsing="false" style="-fx-background-color: &quot;87CEEB&quot;;" text="SI">
+               <font>
+                  <Font name="NSimSun" size="16.0" />
+               </font></Button>
+            <Button fx:id="no" mnemonicParsing="false" style="-fx-background-color: &quot;87CEEB&quot;;" text="NO">
+               <font>
+                  <Font name="NSimSun" size="16.0" />
+               </font></Button>
          </children>
       </HBox>
       <HBox fx:id="hboxPreguntas" alignment="CENTER" prefHeight="57.0" prefWidth="627.0" spacing="80.0" />
