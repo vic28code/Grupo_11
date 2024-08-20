@@ -17,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class FormularioController implements Initializable {
@@ -29,14 +30,14 @@ public class FormularioController implements Initializable {
     private Button no;
     @FXML
     private HBox hboxPreguntas;
-    @FXML
     private Button btnGuardar;
-    @FXML
     private Button btnCancelar;
     private int preguntaActual = 0;  // Índice de la pregunta actual
     private List<String> camposRespuestas = new ArrayList<>();  // Lista para almacenar las respuestas ("sí" o "no")
     private List<String> listaPreguntas;  // Lista de preguntas
     private String rutaArc="src/main/resources/archivos/";
+    @FXML
+    private VBox vboxPreguntas;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

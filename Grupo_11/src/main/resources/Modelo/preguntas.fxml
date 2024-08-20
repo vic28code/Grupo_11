@@ -9,12 +9,15 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Modelo.PreguntasController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FAF3DD;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Modelo.PreguntasController">
    <top>
       <Label text="20 PREGUNTAS " BorderPane.alignment="CENTER">
          <font>
-            <Font size="30.0" />
+            <Font name="Arial Rounded MT Bold" size="30.0" />
          </font>
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
       </Label>
    </top>
    <center>
@@ -30,23 +33,23 @@
          <children>
             <Label fx:id="pregunta" text="PREGUNTA" GridPane.halignment="CENTER">
                <font>
-                  <Font size="20.0" />
+                  <Font name="Baskerville Old Face" size="20.0" />
                </font>
             </Label>
-            <Button fx:id="btnsi" mnemonicParsing="false" prefWidth="120.0" text="SI" GridPane.rowIndex="1">
+            <Button fx:id="btnsi" mnemonicParsing="false" prefWidth="120.0" style="-fx-background-color: #2A9D8F;" text="SI" textFill="WHITE" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets left="120.0" />
                </GridPane.margin>
                <font>
-                  <Font size="15.0" />
+                  <Font name="Verdana" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="btnno" mnemonicParsing="false" prefWidth="120.0" text="NO" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+            <Button fx:id="btnno" mnemonicParsing="false" prefWidth="120.0" style="-fx-background-color: #2A9D8F;" text="NO" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets right="120.0" />
                </GridPane.margin>
                <font>
-                  <Font size="15.0" />
+                  <Font name="Verdana" size="18.0" />
                </font>
             </Button>
             <Label text="Preguntas restantes: " GridPane.rowIndex="2">
@@ -54,13 +57,16 @@
                   <Insets left="50.0" />
                </GridPane.margin>
                <font>
-                  <Font size="14.0" />
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
                </font>
             </Label>
             <Label fx:id="nrestantes" text="n" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets left="200.0" />
                </GridPane.margin>
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="12.0" />
+               </font>
             </Label>
          </children>
       </GridPane>

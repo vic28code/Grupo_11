@@ -7,12 +7,16 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="603.0" prefWidth="769.0" spacing="20.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Modelo.Programa">
+<VBox alignment="CENTER" prefHeight="603.0" prefWidth="769.0" spacing="20.0" style="-fx-background-color: FAF3DD;" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Modelo.Programa">
    <children>
       <VBox alignment="CENTER" prefHeight="56.0" prefWidth="730.0">
          <children>
-            <Label text="TELEPATHIC TACTICS" />
+            <Label text="TELEPATHIC TACTICS" textFill="#3b3a30">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="30.0" />
+               </font></Label>
          </children>
       </VBox>
       <VBox prefHeight="394.0" prefWidth="730.0">
@@ -30,8 +34,14 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="396.0" prefWidth="508.0">
                      <children>
-                        <Label text="Hola" />
-                        <Label prefHeight="115.0" prefWidth="383.0" text="Soy Karen. En este juego pondrás a prueba mis conocimientos.Tendrás que pensar en un animal y me encargaré de adivinarlo a través de ciertas preguntas que te haré." textAlignment="CENTER" wrapText="true" />
+                        <Label text="Hola" textFill="#5a5a5a">
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font></Label>
+                        <Label prefHeight="115.0" prefWidth="452.0" text="Soy Karen. En este juego pondrás a prueba mis conocimientos. Tendrás que pensar en un animal y me encargaré de adivinarlo a través de ciertas preguntas que te haré." textAlignment="CENTER" textFill="#5a5a5a" wrapText="true">
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font></Label>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
                               <HBox alignment="CENTER" prefHeight="216.0" prefWidth="507.0" spacing="25.0">
@@ -77,7 +87,10 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="26.0" prefWidth="507.0">
                <children>
-                  <Button fx:id="jugarButton" onAction="#play" text="JUGAR" />
+                  <Button fx:id="jugarButton" onAction="#play" style="-fx-background-color: #007ACC;" text="JUGAR" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font></Button>
                </children>
             </VBox>
          </children>

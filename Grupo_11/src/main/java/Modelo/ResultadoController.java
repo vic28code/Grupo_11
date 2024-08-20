@@ -38,11 +38,8 @@ public class ResultadoController implements Initializable {
     private Label label2;
     @FXML
     private HBox hboxBotones;
-    @FXML
     private Button btnsi;
-    @FXML
     private Button btnno;
-    @FXML
     private Button salir;
 
     @Override
@@ -70,7 +67,7 @@ public class ResultadoController implements Initializable {
             hboxBotones.getChildren().addAll(salir);
             salir.setOnAction(event -> mostrarMensajeFinal());
         } else {
-            label1.setText("No se pudo determinar en lo \nque pensaste con las preguntas\n realizadas.");
+            label1.setText("No se pudo determinar en lo que pensaste con las preguntas realizadas.");
             List<String> respuestas = arbol.obtenerAnimalesPosibles(arbol.getRaiz());
             label2.setText("Respuestas posibles:\n" + String.join("\n", respuestas));
             salir = new Button();
@@ -98,7 +95,7 @@ public class ResultadoController implements Initializable {
 
     private void mostrarMensajeFinal() {
         hboxBotones.getChildren().clear();
-        label1.setText("Gracias por jugar\n¿Te gustaría jugar de nuevo?");
+        label1.setText("Gracias por jugar \n ¿Te gustaría jugar de nuevo?");
         label2.setText("");
         btnsi = new Button();
         btnno = new Button();
